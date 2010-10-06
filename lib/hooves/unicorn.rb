@@ -11,7 +11,6 @@ module Hooves
       $DEBUG = true if options.delete(:debugger)
       daemonize = options.delete(:daemonize)
 
-      debugger
       # :pid option is stronly discouraged except in unicorn config file
       uni_options = options.slice(:listeners, :worker_processes)
       
