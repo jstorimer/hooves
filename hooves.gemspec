@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.has_rdoc          = false
 
-  s.files            = %w( README )
+  s.files            = %w( README.md )
   s.files            += Dir.glob("lib/**/*")
 
   s.add_dependency('rails', '~> 3.0')
