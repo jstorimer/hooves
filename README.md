@@ -8,7 +8,7 @@ It's a rubygem, you'll want to include it in your Gemfile.
 
 Usage
 ------
-Just use `rails server`.
+Just use `rails server unicorn`.
 
 Config file
 ------------
@@ -22,7 +22,6 @@ We look in ~/ first because you can only pass one config file to Unicorn. If you
 
 Caveats
 --------
-* Using this gem monkey patches Rack::Handler.default making Unicorn the default.
 * This was written to work with Rails 3. Not sure what'll happen if you try it elsewhere. Let me know!
 
 ![](http://www.awesomeoff.com/images/entries/mainview/robocop_unicorn.jpg)
