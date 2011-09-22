@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.files            = %w( README.md )
   s.files            += Dir.glob("lib/**/*")
 
-  s.add_dependency('rails', '~> 3.0')
   s.add_dependency('unicorn', '> 0')
 end
 
