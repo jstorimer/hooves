@@ -8,7 +8,7 @@ module Hooves
     class << self
       def run(app, options={})
         options[:listeners] = ["#{options.delete(:Host)}:#{options.delete(:Port)}"]
-        options[:worker_processes] = 3
+        options[:worker_processes] ||= 3
 
         if options.delete(:debugger)
           $DEBUG = true
@@ -25,12 +25,12 @@ module Hooves
         options[:config_file] = find_config_file
 
         # :pid option is stronly discouraged except in unicorn config file
-        uni_options = options.slice(:listeners, :worker_processes, :config_file, :timeout)
+        uni_options = options.select { |k, v| [:listeners, :worker_processes, :config_file, :timeout].include?(k) }
 
         if daemonize
           ::Unicorn::Launcher.daemonize!(uni_options)
         else
-          ::Unicorn.run(app, uni_options)
+          ::Unicorn::HttpServer.new(app, uni_options).start.join
         end
       end
 
