@@ -8,7 +8,7 @@ module Hooves
     class << self
       def run(app, options={})
         options[:listeners] = ["#{options.delete(:Host)}:#{options.delete(:Port)}"]
-        options[:worker_processes] = 3
+        options[:worker_processes] ||= 3
 
         if options.delete(:debugger)
           $DEBUG = true
