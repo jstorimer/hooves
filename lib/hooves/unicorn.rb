@@ -30,7 +30,7 @@ module Hooves
         if daemonize
           ::Unicorn::Launcher.daemonize!(uni_options)
         else
-          ::Unicorn.run(app, uni_options)
+          ::Unicorn::HttpServer.new(app, uni_options).start.join
         end
       end
 
