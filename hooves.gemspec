@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform     = Gem::Platform::RUBY
   s.name         = 'hooves'
-  s.version      = '0.4'
+  s.version      = '0.5'
   s.summary      = "A simple Rack handler for unicorn meant to be used with the `rails server` command"
   s.date         = Time.now.strftime('%Y-%m-%d')
 
