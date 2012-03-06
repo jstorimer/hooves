@@ -10,6 +10,8 @@ Usage
 ------
 Just use `rails server unicorn`.
 
+If you want to make unicorn the default rack server then you can `require 'hooves/default'` and boot it up with just `rails server`.
+
 Config file
 ------------
 Hooves looks for unicorn config files in two locations.
