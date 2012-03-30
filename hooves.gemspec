@@ -3,6 +3,7 @@ Gem::Specification.new do |s|
   s.name         = 'hooves'
   s.version      = '0.6'
   s.summary      = "A simple Rack handler for unicorn meant to be used with the `rails server` command"
+  s.description  = "Rack handler for unicorn meant to be used with the `rails server` command"
   s.date         = Time.now.strftime('%Y-%m-%d')
 
 
