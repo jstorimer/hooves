@@ -25,7 +25,7 @@ module Hooves
         options[:config_file] = find_config_file
 
         # :pid option is stronly discouraged except in unicorn config file
-        uni_options = options.select { |k, v| [:listeners, :worker_processes, :config_file, :timeout].include?(k) }
+        uni_options = Hash[options.select { |k, v| [:listeners, :worker_processes, :config_file, :timeout].include?(k) }]
 
         if daemonize
           ::Unicorn::Launcher.daemonize!(uni_options)
