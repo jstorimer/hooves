@@ -35,7 +35,7 @@ module Hooves
       end
 
       USER_CONFIG = File.expand_path('~/.hooves')
-      PROJECT_CONFIG = File.expand_path('./.hooves')
+      PROJECT_CONFIG = File.expand_path('./config/unicorn.rb')
       def find_config_file
         if user_config?
           USER_CONFIG
